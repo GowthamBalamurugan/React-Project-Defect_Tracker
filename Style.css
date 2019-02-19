@@ -1,0 +1,100 @@
+h5{
+	color:#ff3300;
+	text-align:center;
+	font-size:20px;
+}
+
+body {
+  background-image: url(./components/loginPage.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.form {
+	border:1px solid green;
+	position:absolute;
+	padding:30px;
+	text-align:center;
+	margin-left:36.4%;
+	border-radius:10px;
+	color:#33ccff;
+	font-size:20px;
+	box-shadow: 10px 10px 5px grey;
+	background-color:#99ffcc;
+}
+input{
+	color:blue;
+	padding:13px
+	
+}
+.table{
+	color:limegreen;
+	text-decoration:none;
+	background-color:#ffffcc;
+}
+th{
+	background-color:#ffcc66;
+	color: #cc3300;
+
+}
+th, td {
+  padding: 7px;
+  text-align: left;
+}
+tr:hover {background-color: #666699;}
+.link{
+	color:blue;
+	text-decoration:none;
+	
+}
+.button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size:16px;
+}
+button:hover{
+	background-color: #4CAF50;
+}	
+.filter{
+	border:1px solid green;
+	position:absolute;
+	margin-left:42.3%;
+	background-color:#ffffcc;
+	padding:10px;
+	border-radius:10px;
+	color:#0066ff;
+	
+}
+.btn:hover{
+	background-color: #cc3300;
+}
+a:hover{
+	color:#ff3300;
+}
+.decide{
+	text-decoration:none;
+	border:1px solid green;
+	border-radius:5px;
+	background-color:limegreen;
+	padding:15px;
+}
+.decide:hover{
+	background-color: #99e6ff;
+}
+.add{
+	border:1px solid green;
+	position:absolute;
+	padding:30px;
+	text-align:center;
+	margin-left:34.5%;
+	border-radius:10px;
+	color:#33ccff;
+	background-color: #ffffcc;
+}
+
+	
