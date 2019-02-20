@@ -12,7 +12,6 @@ class LoginForm extends React.Component {
 		$.get('./components/credentials.json', function(d){
 			//console.log(d);
 			a.setState({'login':d});
-			console.log(this.state)
 		 });
 		
 		
