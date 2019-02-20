@@ -1,0 +1,6 @@
+[
+    {"category":"UI","descr":"Submit button coming to extreme left","priority":2,"stat":"Open","changestat":"Close Defect"},
+    {"category":"Backend","descr":"Taking long time to fetch a data","priority":1,"stat":"Open","changestat":"Close Defect"},
+    {"category":"Funtionality","descr":"While submitting the data, the confirmation pop-up should appear","priority":2,"stat":"Open","changestat":"Close Defect"},
+    {"category":"Other","descr":"Icon error(Refer screenshot)","priority":1,"stat":"Open","changestat":"Close Defect"}
+]
