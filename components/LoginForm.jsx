@@ -1,12 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import $ from 'jquery';
 class LoginForm extends React.Component {
 	constructor(props){
 		super(props);
-		this.state={'login':[{'username':'GOWTHAM', 'passw':12345},
-							{'username':'ARUN', 'passw':24810},
-							{'username':'KOUSHIK', 'passw':13579}]}
+		this.state={'login':[]}
 		this.login=this.login.bind(this);
+	}
+	componentDidMount(){
+		var a=this;
+		$.get('./components/credentials.json', function(d){
+			//console.log(d);
+			a.setState({'login':d});
+			console.log(this.state)
+		 });
+		
+		
 	}
 	login(e){
 		e.preventDefault();
@@ -22,7 +31,7 @@ class LoginForm extends React.Component {
 				alert("Login Failed")
 			}
 			else if(pass==pa){
-				alert("success");
+				alert("Successfully logged on");
 				this.props.history.push("/Decide");
 			}
 			else{
