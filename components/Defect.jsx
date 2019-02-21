@@ -8,12 +8,7 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 		constructor(props){
 			super(props);
 			this.state={
-					'defects':[
-							{'category':'UI','descr':'Submit button coming to extreme left','priority':2,'stat':'Open','changestat':'Close Defect'},
-							{'category':'Backend','descr':'Taking long time to fetch a data','priority':1,'stat':'Open','changestat':'Close Defect'},
-							{'category':'Funtionality','descr':'While submitting the data, the confirmation pop-up should appear','priority':2,'stat':'Open','changestat':'Close Defect'},
-							{'category':'Other','descr':'Icon error(Refer screenshot)','priority':1,'stat':'Open','changestat':'Close Defect'},
-							],
+					'defects':[],
 					'priority':'',
 					'category':'',
 					'temp':[],
@@ -23,6 +18,8 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 		}
 		filter(e){
 			e.preventDefault();
+			var name=e.target.name
+			console.log(name)
 			this.setState({'priority':e.target.value});
 		}
 		filter1(e){
@@ -43,13 +40,25 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 			new1.splice(index, 1);
 			this.setState({'defects':new1});
 			}
+
+		localcall(){
+			var a=this;
+			$.get('./components/defectdetails.json', function(d){
+				//console.log(d);
+				a.setState({'defects':d});
+				console.log(this.state.defects)
+			 });
+		}
 		componentDidMount(){
-			var temp=reactLocalStorage.getObject('arra');
+			this.localcall();
+			 var temp=reactLocalStorage.getObject('arra');
 			var temp1=temp[0]
 			//console.log(temp1)
 			if(temp1!=undefined){
 				this.setState({defects: this.state.defects.concat(temp)})
-			}					
+			}
+			 
+								
 		}
 		//refreshPage(){
 			//window.parent.location = window.parent.location.href;
@@ -74,13 +83,13 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 						<br/><br/>
 						<div className="filter">
 							<span>Filter the Records</span><br/><br/>
-									Priority <select name="All" value={this.state.priority} onChange={this.filter}>
+									Priority <select name="priority" value={this.state.priority} onChange={this.filter}>
 										<option value={this.state.defects.length}>All</option>
 										<option value="1"  >1</option>
 										<option value="2" >2</option>
 										<option value="3">3</option>
 									</select><br/><br/>
-									Category <select name="All" value={this.state.category} onChange={this.filter1}>
+									Category <select name="category" value={this.state.category} onChange={this.filter1}>
 										<option value={this.state.defects.length}>All</option>
 										<option value="UI" >UI</option>
 										<option value="Funtionality" >Funtionality</option>
